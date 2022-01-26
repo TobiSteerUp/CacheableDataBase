@@ -8,7 +8,7 @@ public abstract class LoadingCache<Key, Value> {
     private final AbstractCacheableDatabase<Value> database = new AbstractCacheableDatabase<Value>() {
         @Override
         public Result<Value> load(Keys keys) {
-            Key key = (Key) keys.getParameter("key");
+            Key key = keys.getParameter("key");
             Value value = LoadingCache.this.load(key);
             return new Result<>(value);
         }

@@ -27,8 +27,8 @@ public class Keys {
         return clazz.cast(this.parameter.get(key));
     }
 
-    public Object getParameter(String key) {
-        return this.parameter.get(key);
+    public <T> T getParameter(String key) {
+        return (T) this.parameter.get(key);
     }
 
     public Keys data(String key, String value) {
